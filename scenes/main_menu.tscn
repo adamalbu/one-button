@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bob8ee18uu"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_kvuyj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kvuyj")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 696.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 115
+text = "-- GAME NAME --"
+
+[node name="Menu" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 124.0
+offset_right = 338.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 64
+text = "OPT 1
+OPT 2
+OPT 3
+OPT 4"
+vertical_alignment = 1
