@@ -1,7 +1,7 @@
 extends Control
 @export var menu_items: PackedStringArray = ["New Game", "Load Game", "Options", "Quit"]
 @onready var menu = $Menu
-var selected = 0
+var index = 0
 
 # For checking how long user pressed button
 var press_start_time = 0
@@ -20,16 +20,16 @@ func _input(event):
 				select()
 			else:
 				# Short press
-				selected += 1
+				index += 1
 				update_menu_text()
 
 func update_menu_text():
-	# Wrap selected
-	selected = wrap(selected, 0, menu_items.size())
+	# Wrap index
+	index = wrap(index, 0, menu_items.size())
 	var menu_text = ""
 	# Generate text
 	for item in menu_items:
-		if selected == menu_items.find(item):
+		if index == menu_items.find(item):
 			menu_text += "> " + item + "\n"
 		else:
 			menu_text += item + "\n"
@@ -39,4 +39,14 @@ func update_menu_text():
 
 func select():
 	# TODO: Implement this
-	print("Selected: " + menu_items[selected])
+	match menu_items[index]:
+		"New Game":
+			print("New Game")
+		"Load Game":
+			print("Load Game")
+		"Options":
+			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
+		"Quit":
+			print("Quit")
+		_:
+			print("Unknown option")
