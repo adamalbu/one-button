@@ -1,5 +1,5 @@
 extends Control
-@export var menu_items: PackedStringArray = ["New Game", "Load Game", "Options", "Quit"]
+@export var menu_items: PackedStringArray = ["Play", "Options", "Quit"]
 @onready var menu = $Menu
 var index = 0
 
@@ -38,12 +38,10 @@ func update_menu_text():
 	menu.text = menu_text
 
 func select():
-	# TODO: Implement this
 	match menu_items[index]:
-		"New Game":
-			print("New Game")
-		"Load Game":
-			print("Load Game")
+		"Play":
+			# TODO: implement
+			print("Play")
 		"Options":
 			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
 		"Quit":
