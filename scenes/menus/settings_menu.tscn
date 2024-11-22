@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_u7b8f")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_top = -13.0
 offset_right = 430.0
 offset_bottom = 68.0
@@ -19,6 +20,7 @@ theme_override_font_sizes/font_size = 54
 text = "Settings"
 
 [node name="Menu" type="Label" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 124.0
 offset_right = 345.0
