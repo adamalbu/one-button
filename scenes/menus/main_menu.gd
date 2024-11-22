@@ -41,7 +41,7 @@ func select():
 	match menu_items[index]:
 		"Play":
 			# TODO: implement
-			print("Play")
+			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		"Options":
 			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
 		"Quit":
