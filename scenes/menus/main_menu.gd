@@ -47,6 +47,6 @@ func select():
 		"Options":
 			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
 		"Quit":
-			print("Quit")
+			get_tree().quit()
 		_:
 			print("Unknown option")
