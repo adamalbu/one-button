@@ -2,6 +2,7 @@ extends Control
 @export var settings: Dictionary = {
 	"Window Mode": ["Windowed", "Fullscreen", "Borderless"],
 	"Long Press Threshold": [200, 300, 500, 800],
+	"Reaction Time": [2.0, 2.5, 3.0, 3.5, 4.0]
 }
 var option_indexes: Dictionary = {} # Current values as an index
 @onready var menu = $Menu
@@ -10,7 +11,6 @@ var option_index: int = 0
 var is_option: int = false
 var press_start_time = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	get_current_values()
 	update_menu()

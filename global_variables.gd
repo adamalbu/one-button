@@ -1,6 +1,7 @@
 extends Node
 enum window_modes { WINDOWED, FULLSCREEN, BORDERLESS }
 var long_press_threshold: int = 300
+var reaction_time: float = 3
 var window_mode = window_modes.WINDOWED
 
 func update_window_mode():

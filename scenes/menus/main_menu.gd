@@ -40,7 +40,6 @@ func update_menu_text():
 func select():
 	match menu_items[index]:
 		"Play":
-			# TODO: implement
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		"Options":
 			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")

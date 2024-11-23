@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgmw310e72hs8"]
+
+[ext_resource type="Script" path="res://prefabs/field.gd" id="1_7gjaq"]
+[ext_resource type="Texture2D" uid="uid://cpgn80bk5uw6c" path="res://assets/field.svg" id="1_7rswd"]
+
+[node name="Field" type="Sprite2D"]
+texture = ExtResource("1_7rswd")
+script = ExtResource("1_7gjaq")
