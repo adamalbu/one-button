@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5epstlhxjgwg"]
+[gd_scene load_steps=3 format=3 uid="uid://b5epstlhxjgwg"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_t0p6x"]
 [ext_resource type="Texture2D" uid="uid://bnrlrtlvv5fbt" path="res://assets/dome.svg" id="1_w2g8b"]
-[ext_resource type="PackedScene" uid="uid://dgmw310e72hs8" path="res://prefabs/field.tscn" id="3_2oe26"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_t0p6x")
@@ -10,5 +9,3 @@ script = ExtResource("1_t0p6x")
 [node name="Dome" type="Sprite2D" parent="."]
 scale = Vector2(0.56, 0.56)
 texture = ExtResource("1_w2g8b")
-
-[node name="Field" parent="." instance=ExtResource("3_2oe26")]

@@ -10,6 +10,7 @@ func _ready() -> void:
 	modulate = Color(1, 1, 1, 0)
 	# Timer
 	shrink_timer = Timer.new()
+	shrink_timer.connect("timeout", _on_timer_timeout)
 	shrink_timer.wait_time = reaction_time
 	add_child(shrink_timer)
 	shrink_timer.start()
@@ -21,3 +22,6 @@ func _process(_delta: float) -> void:
 	# Fade in
 	modulate.a = remap(shrink_timer.time_left, reaction_time/1.7, reaction_time, 1, 0)
 	modulate.a = clamp(modulate.a, 0, 1)
+
+func _on_timer_timeout() -> void:
+	shrink_timer.stop()
