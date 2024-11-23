@@ -9,6 +9,8 @@
    id="svg1"
    sodipodi:docname=".drawings.svg"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:export-batch-path="C:\Adam\Projects\Godot\one-button\assets"
+   inkscape:export-batch-name=""
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +27,7 @@
      inkscape:document-units="mm"
      inkscape:zoom="1.0708779"
      inkscape:cx="323.5663"
-     inkscape:cy="359.51811"
+     inkscape:cy="434.22317"
      inkscape:window-width="1920"
      inkscape:window-height="1052"
      inkscape:window-x="-8"
@@ -41,7 +43,7 @@
        id="page4"
        margin="0"
        bleed="0"
-       inkscape:label="Dome" />
+       inkscape:label="dome" />
     <inkscape:grid
        id="grid5"
        units="mm"
@@ -62,14 +64,14 @@
        width="100"
        height="100"
        id="page5"
-       inkscape:label="Field" />
+       inkscape:label="field" />
     <inkscape:page
        x="-1.5039821e-14"
        y="120"
        width="100"
        height="100"
        id="page6"
-       inkscape:label="Danger Field" />
+       inkscape:label="danger_field" />
   </sodipodi:namedview>
   <defs
      id="defs1">
