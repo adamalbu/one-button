@@ -1,5 +1,6 @@
 extends Sprite2D
 var shrink_timer: Timer
+var pass_time: float = 0
 var reaction_time = GlobalVariables.reaction_time
 
 func _ready() -> void:
@@ -25,3 +26,4 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	shrink_timer.stop()
+	pass_time = Time.get_ticks_msec()
