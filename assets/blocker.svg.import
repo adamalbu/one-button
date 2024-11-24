@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baj8cisjg7yl3"
-path="res://.godot/imported/danger_field.svg-322f274883e8f74498f2c50b7b4381ff.ctex"
+uid="uid://dcfwe2ptoj4sp"
+path="res://.godot/imported/blocker.svg-60330738386e060d43a7035da80e61f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/danger_field.svg"
-dest_files=["res://.godot/imported/danger_field.svg-322f274883e8f74498f2c50b7b4381ff.ctex"]
+source_file="res://assets/blocker.svg"
+dest_files=["res://.godot/imported/blocker.svg-60330738386e060d43a7035da80e61f6.ctex"]
 
 [params]
 
