@@ -1,7 +1,8 @@
 extends Node2D
 @export_range(0, 100) var blocker_size: int = 25
-# False for counterclockwise true for clockwise
-var next_move_dir = false
+@export var rotation_speed: float = 300
+var rot_dir: float = 1
+var rotating = false
 
 var overlaps = {
 	"LeftArea": false,
@@ -24,6 +25,10 @@ func _ready():
 	$CircleArea.connect("area_entered", _on_area_entered.bind("CircleArea"))
 	$CircleArea.connect("area_exited", _on_area_exited.bind("CircleArea"))
 
+func _process(delta):
+	if rotating:
+		rotation_degrees += rotation_speed * delta * rot_dir
+
 func _on_area_entered(body: Node, collider_name: String):
 	if body.is_in_group("Obstacle"):
 		overlaps[collider_name] = true
@@ -43,3 +48,10 @@ func _on_window_size_changed() -> void:
 	# Center dome
 	var screen_size = get_viewport_rect().size
 	position = screen_size / 2
+
+func _input(event):
+	if event.is_action_pressed("button"):
+		rotating = true
+	elif event.is_action_released("button"):
+		rotating = false
+		rot_dir *= -1
