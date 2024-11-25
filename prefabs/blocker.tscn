@@ -25,17 +25,20 @@ fill_mode = 4
 texture_progress = ExtResource("1_fqh2m")
 
 [node name="CircleArea" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="CircleCollider" type="CollisionShape2D" parent="CircleArea"]
 shape = SubResource("CircleShape2D_4t01u")
 
 [node name="RightArea" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="RightCollider" type="CollisionShape2D" parent="RightArea"]
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_3srn2")
 
 [node name="LeftArea" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="LeftCollider" type="CollisionShape2D" parent="LeftArea"]
 shape = SubResource("WorldBoundaryShape2D_bxned")
