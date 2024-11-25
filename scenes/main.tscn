@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5epstlhxjgwg"]
+[gd_scene load_steps=4 format=3 uid="uid://b5epstlhxjgwg"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_t0p6x"]
 [ext_resource type="Texture2D" uid="uid://bnrlrtlvv5fbt" path="res://assets/dome.svg" id="1_w2g8b"]
 [ext_resource type="PackedScene" uid="uid://dkumm5165qubl" path="res://prefabs/blocker.tscn" id="3_rfk2r"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cajo1"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_t0p6x")
@@ -15,9 +13,3 @@ texture = ExtResource("1_w2g8b")
 
 [node name="Blocker" parent="." instance=ExtResource("3_rfk2r")]
 rotation = -0.785398
-
-[node name="TestArea" type="Area2D" parent="."]
-position = Vector2(47, -372)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestArea"]
-shape = SubResource("CircleShape2D_cajo1")
