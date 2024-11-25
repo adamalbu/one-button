@@ -73,26 +73,25 @@ func update_variables():
 			GlobalVariables.update_window_mode()
 
 func _input(event):
-	if event is InputEventKey or event is InputEventMouseButton:
-		if event.is_action_pressed("button"):
-			press_start_time = Time.get_ticks_msec()
-		if event.is_action_released("button"):
-			var duration = Time.get_ticks_msec() - press_start_time
-			if duration > GlobalVariables.long_press_threshold:
-				# Long press
-				is_option = not is_option
-				# If back
-				if menu_index == settings.size():
-					update_variables()
-					get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	if event.is_action_pressed("button"):
+		press_start_time = Time.get_ticks_msec()
+	if event.is_action_released("button"):
+		var duration = Time.get_ticks_msec() - press_start_time
+		if duration > GlobalVariables.long_press_threshold:
+			# Long press
+			is_option = not is_option
+			# If back
+			if menu_index == settings.size():
+				update_variables()
+				get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+		else:
+			# Short press
+			if is_option:
+				# If not back
+				if menu_index != settings.size():
+					# Change option
+					var item = settings.keys()[menu_index]
+					option_indexes[item] = wrap(option_indexes[item] + 1, 0, settings[item].size())
 			else:
-				# Short press
-				if is_option:
-					# If not back
-					if menu_index != settings.size():
-						# Change option
-						var item = settings.keys()[menu_index]
-						option_indexes[item] = wrap(option_indexes[item] + 1, 0, settings[item].size())
-				else:
-					menu_index += 1
-			update_menu()
+				menu_index += 1
+		update_menu()

@@ -10,18 +10,17 @@ func _ready():
 	update_menu_text()
 
 func _input(event):
-	if event is InputEventKey or event is InputEventMouseButton:
-		if event.is_action_pressed("button"):
-			press_start_time = Time.get_ticks_msec()
-		if event.is_action_released("button"):
-			var duration = Time.get_ticks_msec() - press_start_time
-			if duration > GlobalVariables.long_press_threshold:
-				# Long press
-				select()
-			else:
-				# Short press
-				index += 1
-				update_menu_text()
+	if event.is_action_pressed("button"):
+		press_start_time = Time.get_ticks_msec()
+	if event.is_action_released("button"):
+		var duration = Time.get_ticks_msec() - press_start_time
+		if duration > GlobalVariables.long_press_threshold:
+			# Long press
+			select()
+		else:
+			# Short press
+			index += 1
+			update_menu_text()
 
 func update_menu_text():
 	# Wrap index

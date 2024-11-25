@@ -6,7 +6,3 @@ func _ready() -> void:
 	var screen_size = get_viewport_rect().size
 	var dome = $Dome
 	dome.position = screen_size / 2
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
