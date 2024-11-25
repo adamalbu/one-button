@@ -10,6 +10,9 @@ var overlaps = {
 }
 
 func _ready():
+	get_tree().root.connect("size_changed", _on_window_size_changed)
+	_on_window_size_changed()
+
 	$BlockerTexture.value = blocker_size
 	$RightArea.rotation_degrees = remap(blocker_size, 0, 100, 0, 360)
 	rotation_degrees = remap(blocker_size, 0, 100, 0, -180)
@@ -35,3 +38,8 @@ func _on_area_exited(body: Node, collider_name: String):
 func check_all_colliders():
 	if overlaps.values().all(func(x): return x):
 		print("Object is touching all colliders!")
+
+func _on_window_size_changed() -> void:
+	# Center dome
+	var screen_size = get_viewport_rect().size
+	position = screen_size / 2
