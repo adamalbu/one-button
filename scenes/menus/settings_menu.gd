@@ -2,6 +2,8 @@ extends Control
 @export var settings: Dictionary = {
 	"Window Mode": ["Windowed", "Fullscreen", "Borderless"],
 	"Long Press Threshold": [200, 300, 500, 800],
+	"Blocker Size": [10, 25, 30, 40, 60, 100],
+	"Rotation Speed": [100, 200, 300, 400, 500]
 }
 var option_indexes: Dictionary = {} # Current values as an index
 @onready var menu = $Menu

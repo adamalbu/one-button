@@ -1,6 +1,6 @@
 extends Node2D
-@export_range(0, 100) var blocker_size: int = 25
-@export var rotation_speed: float = 300
+var blocker_size = GlobalVariables.blocker_size
+var rotation_speed = GlobalVariables.rotation_speed
 var rot_dir: float = 1
 var rotating = false
 
