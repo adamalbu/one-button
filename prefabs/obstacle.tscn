@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bsuluw7jfdr3s" path="res://assets/obstacle.svg" id="1_jr4dq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqitx"]
-radius = 45.5412
+radius = 48.0
 
 [node name="Obstacle" type="Area2D"]
+collision_layer = 0
 script = ExtResource("1_g282w")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -15,3 +16,6 @@ texture = ExtResource("1_jr4dq")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uqitx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -12,6 +12,7 @@ func _ready():
 	timer = Timer.new()
 	timer.set_wait_time(randf_range(1, 3))
 	timer.connect("timeout", _on_timer_timeout)
+	timer.one_shot = true
 	add_child(timer)
 	timer.start()
 
