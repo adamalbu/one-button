@@ -8,9 +8,11 @@
 script = ExtResource("1_t0p6x")
 
 [node name="Dome" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("1_w2g8b")
 
 [node name="Blocker" parent="." instance=ExtResource("3_rfk2r")]
+position = Vector2(960, 540)
 rotation = -0.785398
 scale = Vector2(0.68, 0.68)
