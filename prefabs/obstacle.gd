@@ -39,4 +39,14 @@ func check_areas():
 	# If everything but innercircle is entered, print hit and destroy object
 	elif entered_areas["LeftArea"] and entered_areas["RightArea"] and entered_areas["OuterCircleArea"] and !entered_areas["InnerCircleArea"]:
 		print("Hit")
-		queue_free()
+		$AnimatedSprite.play("explode")
+		$AnimatedSprite.connect("animation_finished", queue_free)
+		
+		
+		
+		
+		
+		
+		
+		
+		
