@@ -9,7 +9,7 @@ func _ready():
 	_on_window_size_changed()
 
 	$BlockerTexture.value = blocker_size
-	$RightArea.rotation_degrees = remap(blocker_size, 0, 100, 0, 360)
+	$RightArea.rotation_degrees = -remap(blocker_size, 0, 100, 0, 360)
 	rotation_degrees = remap(blocker_size, 0, 100, 0, -180)
 
 func _process(delta):

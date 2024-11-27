@@ -29,15 +29,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_cnn6o")
 }],
-"loop": true,
+"loop": false,
 "name": &"explode",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6roxi")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 1.0
 }]
