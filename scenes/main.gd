@@ -6,6 +6,7 @@ var health_timer: Timer
 var health = 100
 
 var bug_counter = 0
+var speed_increase_divisor: float = GlobalVariables.speed_increase_divisor
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -60,7 +61,7 @@ func dome_hit():
 func bug_blocked():
 	bug_counter += 1
 	print(bug_counter)
-	Engine.time_scale = 1.0 + bug_counter / 50.0
+	Engine.time_scale = 1.0 + bug_counter / speed_increase_divisor
 
 func _on_window_size_changed() -> void:
 	# Center dome
