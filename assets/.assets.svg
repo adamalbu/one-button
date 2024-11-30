@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1.7624986"
-     inkscape:cx="130.49656"
-     inkscape:cy="624.68135"
+     inkscape:zoom="0.8812493"
+     inkscape:cx="967.94403"
+     inkscape:cy="1022.4122"
      inkscape:window-width="1920"
      inkscape:window-height="1052"
      inkscape:window-x="-8"
@@ -76,6 +76,20 @@
        inkscape:label="obstacle"
        margin="0"
        bleed="0" />
+    <inkscape:page
+       x="120"
+       y="170"
+       width="300"
+       height="40"
+       id="page2"
+       inkscape:label="bar_under" />
+    <inkscape:page
+       x="120"
+       y="220"
+       width="300"
+       height="40"
+       id="page3"
+       inkscape:label="bar_over" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -396,5 +410,19 @@
          d="m 50.371853,121.80074 v 77"
          id="path15" />
     </g>
+    <rect
+       style="fill:none;stroke:#fffffb;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2"
+       width="297"
+       height="37"
+       x="121.5"
+       y="171.5" />
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       id="rect3"
+       width="297"
+       height="37"
+       x="121.5"
+       y="221.5" />
   </g>
 </svg>

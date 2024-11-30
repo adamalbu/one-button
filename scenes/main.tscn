@@ -1,26 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5epstlhxjgwg"]
+[gd_scene load_steps=7 format=3 uid="uid://b5epstlhxjgwg"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_t0p6x"]
 [ext_resource type="Texture2D" uid="uid://bnrlrtlvv5fbt" path="res://assets/dome.svg" id="1_w2g8b"]
 [ext_resource type="PackedScene" uid="uid://dkumm5165qubl" path="res://prefabs/blocker.tscn" id="3_rfk2r"]
+[ext_resource type="Texture2D" uid="uid://b8mqfxux2qxvn" path="res://assets/bar_under.svg" id="4_x4ow6"]
+[ext_resource type="Texture2D" uid="uid://dtxoak5npx2fn" path="res://assets/bar_over.svg" id="5_ewsbo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_frkko"]
 radius = 120.266
 
-[node name="Main" type="Node2D"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Main" type="Node2D" parent="."]
 script = ExtResource("1_t0p6x")
 
-[node name="Dome" type="Area2D" parent="."]
+[node name="Dome" type="Area2D" parent="Main"]
 position = Vector2(960, 540)
 
-[node name="Sprite" type="Sprite2D" parent="Dome"]
+[node name="Sprite" type="Sprite2D" parent="Main/Dome"]
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("1_w2g8b")
 
-[node name="Collider" type="CollisionShape2D" parent="Dome"]
+[node name="Collider" type="CollisionShape2D" parent="Main/Dome"]
 shape = SubResource("CircleShape2D_frkko")
 
-[node name="Blocker" parent="." instance=ExtResource("3_rfk2r")]
+[node name="Blocker" parent="Main" instance=ExtResource("3_rfk2r")]
 position = Vector2(960, 540)
 rotation = -0.785398
 scale = Vector2(0.68, 0.68)
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1158.0
+offset_bottom = 175.0
+scale = Vector2(0.595, 0.595)
+pivot_offset = Vector2(0, 0.444438)
+value = 100.0
+texture_under = ExtResource("4_x4ow6")
+texture_progress = ExtResource("5_ewsbo")
