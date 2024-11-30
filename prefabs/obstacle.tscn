@@ -1,16 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://4vb6bw7hovwp"]
 
 [ext_resource type="Script" path="res://prefabs/obstacle.gd" id="1_g282w"]
-[ext_resource type="Texture2D" uid="uid://s6snwtght75u" path="res://assets/obstacle_frames/01.png" id="2_6roxi"]
-[ext_resource type="Texture2D" uid="uid://y6xebf1pg36p" path="res://assets/obstacle_frames/02.png" id="3_1bdkj"]
-[ext_resource type="Texture2D" uid="uid://k86l7oyagy81" path="res://assets/obstacle_frames/03.png" id="4_i6amg"]
-[ext_resource type="Texture2D" uid="uid://dmrv5tmoybvr3" path="res://assets/obstacle_frames/04.png" id="5_x5q48"]
-[ext_resource type="Texture2D" uid="uid://b0y2x4qhor8gn" path="res://assets/obstacle_frames/05.png" id="6_5uv8u"]
-[ext_resource type="Texture2D" uid="uid://c71ykrlstf135" path="res://assets/obstacle_frames/06.png" id="7_cnn6o"]
+[ext_resource type="Texture2D" uid="uid://5pw5h7kbb85b" path="res://assets/obstacle_frames/01.png" id="2_6roxi"]
+[ext_resource type="Texture2D" uid="uid://ckq447qf0jkyv" path="res://assets/obstacle_frames/00.png" id="2_pg3ml"]
+[ext_resource type="Texture2D" uid="uid://c87p11x6mrkbv" path="res://assets/obstacle_frames/02.png" id="3_1bdkj"]
+[ext_resource type="Texture2D" uid="uid://bkcf7but3to5k" path="res://assets/obstacle_frames/03.png" id="4_i6amg"]
+[ext_resource type="Texture2D" uid="uid://bqjn23jm2puct" path="res://assets/obstacle_frames/04.png" id="5_x5q48"]
+[ext_resource type="Texture2D" uid="uid://b2tpqumjmc8jt" path="res://assets/obstacle_frames/05.png" id="6_5uv8u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrsk3"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pg3ml")
+}, {
 "duration": 1.0,
 "texture": ExtResource("2_6roxi")
 }, {
@@ -25,9 +28,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_5uv8u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_cnn6o")
 }],
 "loop": false,
 "name": &"explode",
