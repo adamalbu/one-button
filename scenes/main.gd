@@ -5,8 +5,12 @@ var bug_timer: Timer
 var health_timer: Timer
 var health = 100
 
+var bug_counter = 0
+var speed_increase_divisor: float = GlobalVariables.speed_increase_divisor
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Engine.time_scale = 1
 	get_tree().root.connect("size_changed", _on_window_size_changed)
 	_on_window_size_changed()
 	spawn_obstacle()
@@ -34,6 +38,7 @@ func _on_health_timer_timeout():
 
 func update_health(value: int):
 	health += value
+	health = clamp(health, 0, 100)
 	$"../HealthBar".value = health
 	if health <= 0:
 		get_tree().reload_current_scene() # TODO: replace with game over screen
@@ -48,9 +53,15 @@ func spawn_obstacle():
 	obstacle.position = Vector2(cos(angle), sin(angle)) * radius + center_pos
 	add_child(obstacle)
 	obstacle.connect("dome_hit", dome_hit)
+	obstacle.connect("blocked", bug_blocked)
 
 func dome_hit():
 	update_health(-10)
+
+func bug_blocked():
+	bug_counter += 1
+	print(bug_counter)
+	Engine.time_scale = 1.0 + bug_counter / speed_increase_divisor
 
 func _on_window_size_changed() -> void:
 	# Center dome

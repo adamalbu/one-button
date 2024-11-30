@@ -3,7 +3,8 @@ extends Control
 	"Window Mode": ["Windowed", "Fullscreen", "Borderless"],
 	"Long Press Threshold": [200, 300, 500, 800],
 	"Blocker Size": [10, 25, 30, 40, 60, 100],
-	"Rotation Speed": [100, 200, 300, 400, 500]
+	"Rotation Speed": [100, 200, 300, 400, 500],
+	"Speed Increase Divisor": [30, 40, 50, 60, 70]
 }
 var option_indexes: Dictionary = {} # Current values as an index
 @onready var menu = $Menu

@@ -5,6 +5,7 @@ var collided = false
 var t: float = 0
 
 signal dome_hit
+signal blocked
 
 var entered_areas = {
 	"LeftArea": false,
@@ -44,6 +45,7 @@ func check_areas():
 		collided = true
 		$AnimatedSprite.play("explode")
 		$AnimatedSprite.connect("animation_finished", _on_animation_finished)
+		blocked.emit()
 	# If dome is entered, print dome hit and destroy object
 	if entered_areas["Dome"]:
 		collided = true
