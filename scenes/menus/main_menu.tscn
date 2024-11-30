@@ -13,7 +13,15 @@ offset_top = -33.0
 offset_right = 696.0
 offset_bottom = 124.0
 theme_override_font_sizes/font_size = 115
-text = "-- GAME NAME --"
+text = "Bug Blocker"
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 112.0
+offset_right = 912.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 45
+text = "INSTRUCTIONS"
 
 [node name="Menu" type="Label" parent="."]
 layout_mode = 0

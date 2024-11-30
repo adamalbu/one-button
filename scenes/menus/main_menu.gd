@@ -1,5 +1,10 @@
 extends Control
 @export var menu_items: PackedStringArray = ["Play", "Options", "Quit"]
+@export var instructions: Dictionary = {
+	"desktop": "Click or press space",
+	"mobile": "Tap the screen",
+	"web": "Click or press space if you're on a desktop,\nor tap the screen if you're on a mobile device."
+}
 @onready var menu = $Menu
 var index = 0
 
@@ -7,6 +12,11 @@ var index = 0
 var press_start_time = 0
 
 func _ready():
+	# Set up instructions
+	for platform in instructions.keys():
+		if OS.has_feature(platform):
+			$Instructions.text = instructions[platform]
+			break
 	update_menu_text()
 
 func _input(event):
@@ -39,7 +49,6 @@ func update_menu_text():
 func select():
 	match menu_items[index]:
 		"Play":
-			# TODO: implement
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		"Options":
 			get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
