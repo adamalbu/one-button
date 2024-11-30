@@ -1,7 +1,9 @@
 extends Node2D
 const radius = 1000
 var center_pos = Vector2()
-var timer: Timer
+var bug_timer: Timer
+var health_timer: Timer
+var health = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,26 +11,46 @@ func _ready():
 	_on_window_size_changed()
 	spawn_obstacle()
 
-	timer = Timer.new()
-	timer.set_wait_time(randf_range(1, 3))
-	timer.connect("timeout", _on_timer_timeout)
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
+	bug_timer = Timer.new()
+	bug_timer.set_wait_time(randf_range(1, 3))
+	bug_timer.connect("timeout", _on_bug_timer_timeout)
+	bug_timer.one_shot = true
+	add_child(bug_timer)
+	bug_timer.start()
 
-func _on_timer_timeout():
+	health_timer = Timer.new()
+	health_timer.set_wait_time(3)
+	health_timer.connect("timeout", _on_health_timer_timeout)
+	health_timer.one_shot = false
+	add_child(health_timer)
+	health_timer.start()
+
+func _on_bug_timer_timeout():
 	spawn_obstacle()
 	restart_timer()
 
+func _on_health_timer_timeout():
+	update_health(5)
+
+func update_health(value: int):
+	health += value
+	$"../HealthBar".value = health
+	if health <= 0:
+		get_tree().reload_current_scene() # TODO: replace with game over screen
+
 func restart_timer():
-	timer.set_wait_time(randf_range(1, 3))
-	timer.start()
+	bug_timer.set_wait_time(randf_range(1, 3))
+	bug_timer.start()
 
 func spawn_obstacle():
 	var obstacle = preload("res://prefabs/obstacle.tscn").instantiate()
 	var angle = randf_range(0, 2 * PI)
 	obstacle.position = Vector2(cos(angle), sin(angle)) * radius + center_pos
 	add_child(obstacle)
+	obstacle.connect("dome_hit", dome_hit)
+
+func dome_hit():
+	update_health(-10)
 
 func _on_window_size_changed() -> void:
 	# Center dome

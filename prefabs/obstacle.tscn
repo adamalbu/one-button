@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4vb6bw7hovwp"]
+[gd_scene load_steps=10 format=3 uid="uid://4vb6bw7hovwp"]
 
 [ext_resource type="Script" path="res://prefabs/obstacle.gd" id="1_g282w"]
 [ext_resource type="Texture2D" uid="uid://5pw5h7kbb85b" path="res://assets/obstacle_frames/01.png" id="2_6roxi"]
@@ -35,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_fc5jn")
+"texture": ExtResource("2_6roxi")
 }],
 "loop": false,
 "name": &"idle",
@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqitx"]
-radius = 51.0098
+radius = 48.0
 
 [node name="Obstacle" type="Area2D"]
 collision_layer = 0
@@ -52,7 +52,7 @@ script = ExtResource("1_g282w")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.245, 0.245)
 sprite_frames = SubResource("SpriteFrames_wrsk3")
-animation = &"idle"
+animation = &"explode"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uqitx")
