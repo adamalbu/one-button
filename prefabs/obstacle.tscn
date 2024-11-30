@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bkcf7but3to5k" path="res://assets/obstacle_frames/03.png" id="4_i6amg"]
 [ext_resource type="Texture2D" uid="uid://bqjn23jm2puct" path="res://assets/obstacle_frames/04.png" id="5_x5q48"]
 [ext_resource type="Texture2D" uid="uid://b2tpqumjmc8jt" path="res://assets/obstacle_frames/05.png" id="6_5uv8u"]
-[ext_resource type="Texture2D" uid="uid://bsuluw7jfdr3s" path="res://assets/obstacle.svg" id="8_fc5jn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrsk3"]
 animations = [{
