@@ -44,7 +44,6 @@ shape = SubResource("CircleShape2D_auveh")
 collision_mask = 0
 
 [node name="RightCollider" type="CollisionShape2D" parent="RightArea"]
-rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_3srn2")
 
 [node name="LeftArea" type="Area2D" parent="."]
